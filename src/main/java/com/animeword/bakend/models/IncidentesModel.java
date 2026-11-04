@@ -33,8 +33,6 @@ public class IncidentesModel {
     private boolean ressuelto;
     @Column (name = "FCierre",nullable = true)
     private LocalDateTime fechaCierre;
-    @Column(name = "actualizaciones", columnDefinition = "TEXT", nullable = false)
+    @Column(name = "actualizaciones", columnDefinition = "jsonb", nullable = false)
     private String actualiazacionJson;
-
-
 }
