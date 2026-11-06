@@ -39,7 +39,7 @@ public class UserModel {
     private  String rut;
     @Column (name = "correo", nullable = false, unique = true)
     private  String correo;
-    @Column (name = "password", nullable = false, unique = true)
+    @Column (name = "password", nullable = false)
     private  String haspassword;
 
 }

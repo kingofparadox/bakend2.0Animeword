@@ -73,4 +73,15 @@ public class GlobalExceptionHandler {
         );
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorDto);
     }
+
+    @ExceptionHandler(CredencialesInvalidasException.class)
+    public ResponseEntity<DtoError> handleCredencialesInvalidas(CredencialesInvalidasException ex) {
+    DtoError errorDto = new DtoError(
+        HttpStatus.UNAUTHORIZED.value(),
+        "Acceso no autorizado",
+        LocalDateTime.now(),
+        Optional.of(Map.of("error", ex.getMessage()))
+    );
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorDto);
+    }
 }
