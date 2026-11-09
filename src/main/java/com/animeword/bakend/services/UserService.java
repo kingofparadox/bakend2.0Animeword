@@ -1,5 +1,8 @@
 package com.animeword.bakend.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.animeword.bakend.error.CredencialesInvalidasException;
@@ -29,6 +32,17 @@ public class UserService {
         this.repoRol = rolRepo;
     }
 
+    public List<DtoUserSalida> usuarios(){
+        List<UserModel> listaE =repoUser.findAll();
+        if(listaE.size()== 0){
+            throw new errorNoencotrado("error no existen usuarios registrados");
+        }
+        List<DtoUserSalida>listaDto= new ArrayList<>();
+        for (UserModel entity : listaE) {
+            listaDto.add(MaperUser.modelTodtoSalida(entity));
+        }
+        return listaDto;
+    }
     public String  createuser(DtoUserEntrada dto){
         String paswordString = encritador.encode(dto.password());
         RolModel rol =repoRol.findByNombre(dto.rol()).orElseThrow(()->new 
@@ -70,6 +84,19 @@ public class UserService {
     }
 
     // METODOS DE  ROLES 
+
+    public  List<DtoRol> listaRoles (){
+        List<RolModel> Lista=repoRol.findAll();
+        if (Lista.size()== 0){
+            throw new errorNoencotrado("error no existen roles ");
+        }
+        List <DtoRol> lista= new ArrayList<>();
+        for (RolModel rol : Lista) {
+            lista.add(MaperUser.salidaRol(rol));
+            
+        }
+        return  lista;
+    }
 
     public String crearRol(DtoRol nuevoRol) {
         RolModel nombreRol=  repoRol.save(MaperUser.createRol(nuevoRol));

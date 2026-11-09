@@ -1,5 +1,10 @@
 package com.animeword.bakend.models;
 
+import java.util.List;
+
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,7 +20,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity 
-@Table (name="roles") 
+@Table (name="producto") 
 @Data 
 @NoArgsConstructor  
 @AllArgsConstructor 
@@ -37,8 +42,9 @@ public class ProductoModel {
     private  Integer stock;
     @Column(name="oferta",nullable = false)
     private Integer oferta;
-    @Column(name="imagenPath",nullable = false)
-    private String imagenPad;
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "imagen_paths", columnDefinition = "jsonb", nullable = false)
+    private List<String> imagenPaths;
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn (name = "categoria", nullable = false)
     private  CategoriaModel categoria;

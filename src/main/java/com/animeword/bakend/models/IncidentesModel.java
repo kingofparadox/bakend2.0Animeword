@@ -26,9 +26,9 @@ public class IncidentesModel {
     private  Long id;
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn (name = "userID", nullable = false)
+    private UserModel  user;
     @Column (name = "descripcion",nullable = false)
     private String incidenteDescripcion;
-    private UserModel  user;
     @Column (name = "FInicio",nullable = false)
     private LocalDateTime fechaInicio;
     @Column (name="resuelto",nullable = false)
