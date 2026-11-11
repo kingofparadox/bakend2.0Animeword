@@ -32,7 +32,7 @@ public class ProductoModel {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
  ///data Extraño la data clas de cotlin 
     private Long id;
-    @Column  (name = "nombre", nullable = false)
+    @Column  (name = "nombre", nullable = false, unique= true )
     private  String nombre;
     @Column(name="codigoBarras", nullable = false, unique=true)
     private  String codigoBarras;
