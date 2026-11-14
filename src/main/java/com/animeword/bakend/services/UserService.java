@@ -53,7 +53,7 @@ public class UserService {
 
     public  DtoUserSalida longin(DtoLogin dto){
         UserModel user =repoUser.findByCorreo(dto.correo()).orElseThrow(()-> new
-        errorNoencotrado("correo no encontrado"));
+        errorNoencotrado("nullcorreo no encontrado"));
         if(encritador.matches( dto.password(),user.getHaspassword())){
             return new DtoUserSalida(user.getNombre()+" "+user.getApellido()
             , user.getRut(), user.getCorreo(), user.getRol().getNombre());
@@ -81,6 +81,12 @@ public class UserService {
         }
         repoUser.deleteById(id);
         return "Usuario eliminado con éxito";
+    }
+
+    public DtoUserSalida buscarUaser(String rut){
+    UserModel user =repoUser.findByRut(rut).orElseThrow(()-> 
+        new errorNoencotrado("el rut "+ rut+" no existe"));
+    return  MaperUser.modelTodtoSalida(user);
     }
 
     // METODOS DE  ROLES 
