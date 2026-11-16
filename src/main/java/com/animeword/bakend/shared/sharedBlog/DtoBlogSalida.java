@@ -1,0 +1,22 @@
+package com.animeword.bakend.shared.sharedBlog;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+import com.animeword.bakend.shared.shareduserrol.DtoUserSalida;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record DtoBlogSalida(
+    @NotBlank (message ="el titulo debe tener algo escrito")
+    String titulo,
+    DtoUserSalida autor,
+    @NotNull (message = "debe tener fecha de publicacion")
+    LocalDateTime fecha,
+    List<Map<String,String>> contenido
+
+) {
+
+}
