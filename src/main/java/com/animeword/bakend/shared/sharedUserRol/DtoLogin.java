@@ -1,4 +1,4 @@
-package com.animeword.bakend.shared.shareduserrol;
+package com.animeword.bakend.shared.sharedUserRol;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

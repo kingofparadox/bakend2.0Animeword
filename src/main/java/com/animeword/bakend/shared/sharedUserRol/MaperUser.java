@@ -1,4 +1,4 @@
-package com.animeword.bakend.shared.shareduserrol;
+package com.animeword.bakend.shared.sharedUserRol;
 
 import com.animeword.bakend.models.RolModel;
 import com.animeword.bakend.models.UserModel;

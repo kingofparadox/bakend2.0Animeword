@@ -2,6 +2,10 @@ package com.animeword.bakend.models;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,13 +41,9 @@ public class BoletasModel {
     private Integer total;
     @Column (name = "fecha",nullable = false)
     private  LocalDateTime fecha;
-    @ManyToMany (fetch = FetchType.EAGER)
-    @JoinTable(
-        name = "boleta_producto", // Tabla intermedia que JPA creará solita en Neon DB
-        joinColumns = @JoinColumn(name = "boleta_id"),
-        inverseJoinColumns = @JoinColumn(name = "producto_id")
-    )
-    private  List<ProductoModel> productos;
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "detalles", columnDefinition = "jsonb", nullable = false)
+    private List<Map<String,Object>> detalles;
     
 
 }

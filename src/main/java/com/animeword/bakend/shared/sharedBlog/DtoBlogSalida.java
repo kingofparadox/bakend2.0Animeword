@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
-import com.animeword.bakend.shared.shareduserrol.DtoUserSalida;
+import com.animeword.bakend.shared.sharedUserRol.DtoUserSalida;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

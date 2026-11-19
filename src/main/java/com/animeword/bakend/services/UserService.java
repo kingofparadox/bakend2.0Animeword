@@ -11,11 +11,11 @@ import com.animeword.bakend.models.RolModel;
 import com.animeword.bakend.models.UserModel;
 import com.animeword.bakend.repo.RolRepo;
 import com.animeword.bakend.repo.UserRepo;
-import com.animeword.bakend.shared.shareduserrol.DtoLogin;
-import com.animeword.bakend.shared.shareduserrol.DtoRol;
-import com.animeword.bakend.shared.shareduserrol.DtoUserEntrada;
-import com.animeword.bakend.shared.shareduserrol.DtoUserSalida;
-import com.animeword.bakend.shared.shareduserrol.MaperUser;
+import com.animeword.bakend.shared.sharedUserRol.DtoLogin;
+import com.animeword.bakend.shared.sharedUserRol.DtoRol;
+import com.animeword.bakend.shared.sharedUserRol.DtoUserEntrada;
+import com.animeword.bakend.shared.sharedUserRol.DtoUserSalida;
+import com.animeword.bakend.shared.sharedUserRol.MaperUser;
 
 @Service 
 public class UserService {

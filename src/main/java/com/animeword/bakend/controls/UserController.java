@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.animeword.bakend.services.UserService;
-import com.animeword.bakend.shared.shareduserrol.DtoLogin;
-import com.animeword.bakend.shared.shareduserrol.DtoRol;
-import com.animeword.bakend.shared.shareduserrol.DtoUserEntrada;
-import com.animeword.bakend.shared.shareduserrol.DtoUserSalida;
+import com.animeword.bakend.shared.sharedUserRol.DtoLogin;
+import com.animeword.bakend.shared.sharedUserRol.DtoRol;
+import com.animeword.bakend.shared.sharedUserRol.DtoUserEntrada;
+import com.animeword.bakend.shared.sharedUserRol.DtoUserSalida;
 
 
     @RestController

@@ -8,4 +8,5 @@ import com.animeword.bakend.models.UserModel;
 public interface BlogRepo extends JpaRepository<BlogModel,Long> {
 
     List<BlogModel> findByAutor(UserModel autor);
+    BlogModel findByTitulo(String titulo);
 }

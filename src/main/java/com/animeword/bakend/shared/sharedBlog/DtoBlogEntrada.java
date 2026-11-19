@@ -3,7 +3,6 @@ package com.animeword.bakend.shared.sharedBlog;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-import com.animeword.bakend.shared.shareduserrol.DtoUserEntrada;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

@@ -7,8 +7,7 @@ import java.util.Map;
 
 import com.animeword.bakend.models.BlogModel;
 import com.animeword.bakend.models.UserModel;
-import com.animeword.bakend.shared.shareduserrol.DtoUserEntrada;
-import com.animeword.bakend.shared.shareduserrol.MaperUser;
+import com.animeword.bakend.shared.sharedUserRol.MaperUser;
 
 public class MapperBlog {
 
